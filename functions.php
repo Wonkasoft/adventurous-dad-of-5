@@ -42,9 +42,30 @@ function adventurous_dad_of_5_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in five locations.
+	// This is the Primary Main Title Menu and used in the header.php file
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'adventurous-dad-of-5' ),
+	) );
+
+	// This menu is on the footer for the explore menu and used in the footer.php file
+	register_nav_menus( array(
+		'menu-2' => esc_html__( 'Explore', 'adventurous-dad-of-5' ),
+	) );
+
+	// This menu is on the footer for the about menu and used in the footer.php file
+	register_nav_menus( array(
+		'menu-3' => esc_html__( 'About', 'adventurous-dad-of-5' ),
+	) );
+
+	// This menu is on the footer for the contact menu and used in the footer.php file
+	register_nav_menus( array(
+		'menu-4' => esc_html__( 'Contact', 'adventurous-dad-of-5' ),
+	) );
+
+	// This menu is on the footer for the connect menu and used in the footer.php file
+	register_nav_menus( array(
+		'menu-5' => esc_html__( 'Connect', 'adventurous-dad-of-5' ),
 	) );
 
 	/*
@@ -119,9 +140,23 @@ add_action( 'widgets_init', 'adventurous_dad_of_5_widgets_init' );
 function adventurous_dad_of_5_scripts() {
 	wp_enqueue_style( 'adventurous-dad-of-5-style', get_stylesheet_uri() );
 
+	// Check to see if bootstrap style is already enqueue before setting the enqueue
+	$style = 'bootstrap';
+	if( ( ! wp_style_is( $style, 'enqueued' ) ) && ( ! wp_style_is( $style, 'done' ) ) ) {
+    //queue up your bootstrap
+		wp_enqueue_style( $style, str_replace( array('http:', 'https:'), '', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css'), '3.3.7', 'all' );
+	}
+
 	wp_enqueue_script( 'adventurous-dad-of-5-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'adventurous-dad-of-5-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	// Check to see if bootstrap js is already enqueue before setting the enqueue
+	$bootstrapjs = 'bootstrap-js';
+	if ( ( ! wp_script_is( $bootstrapjs, 'enqueued') ) && ( ! wp_script_is($bootstrapjs, 'done') ) ) {
+	 	// enqueue bootstrap js
+		wp_enqueue_script( $bootstrapjs, str_replace( array('http:', 'https:'), '', plugin_dir_url( __FILE__ ) . 'js/bootstrap.min.js'), array( 'jquery' ), '3.3.7', false );
+	} 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
