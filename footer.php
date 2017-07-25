@@ -53,6 +53,8 @@
 			
 			<div class="col-xs-12 col-md-3">
 				<h3 class="footer-header">CONNECT</h3>
+				<span>UPDATES & SPECIALS SIGN UP NOW</span>
+				<?php get_search_form(); ?>
 				<nav id="footer-4-navigation" class="footer-4-navigation">
 					<?php
 						wp_nav_menu( array(
