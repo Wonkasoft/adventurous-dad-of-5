@@ -30,7 +30,7 @@
 			<?php
 			if (!has_custom_logo()) {
 			  ?><a class="logo-link" href="<?php echo esc_url(home_url('/')); ?>">
-			  <img class="img-responsive center-block default-logo" src="<?php echo get_template_directory_uri() . '/assets/images/charlie-foxtrot-logo.png'; ?>" /></a>
+			  <img class="img-responsive center-block default-logo" src="<?php echo get_template_directory_uri() . '/assets/images/adventurous-logo.png'; ?>" /></a>
 			  <?php 
 			} else { 
 			    $custom_logo_id = get_theme_mod( 'custom_logo' );
