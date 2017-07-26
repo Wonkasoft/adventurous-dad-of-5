@@ -23,6 +23,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# SETUP
 # Normalize
 # Typography
 # Elements
@@ -42,6 +43,102 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
   ## Captions
   ## Galleries
 --------------------------------------------------------------*/
+/*------------------------------------*\
+    SETUP
+\*------------------------------------*/
+
+/* 
+Media Queries 
+@media (min-width: $iphone-4-min) and ( max-width: $iphone-4-max) and ( -webkit-device-pixel-ratio: 2 )
+@media (min-width: $screen-sm-min)
+@media (min-width: $screen-md-min)
+@media (min-width: $screen-lg-min)
+*/
+
+// Defining values
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
+// For iphone 4
+$iphone-4-min: 320px;
+$iphone-4-max: 480px;
+
+// Font sizes
+$iphone-4-font-size: 9pt;
+$brand-font-size-xs: 11pt;
+$brand-font-size-sm: 12pt;
+$brand-font-size-md: 15pt;
+$brand-font-size-lg: 30pt;
+
+// Theme Colors
+$header-color: linear-gradient(-214deg, rgba(37, 60, 94, .8) 0%, rgba(37, 60, 94, 1) 100%);
+$navbar-color: linear-gradient(-214deg, rgba(#808080, .9) 0%, rgba(#595959, 1) 100%);
+$mega-color: linear-gradient(-214deg, rgba(#dabb83, .8) 0%, rgba(#dabb83, 1) 100%);
+$button-color: linear-gradient(-214deg, rgba(#ffb04a, .8) 0%, rgba(#e38000, 1) 100%);
+$button-hover: linear-gradient(-214deg, rgba(#e38000, .8) 0%, rgba(#ffb04a, 1) 100%);
+$white: #fff;
+$whats-new-section: #5dbeff;
+$dealer-placeholders: rgba(55,55,55, .7);
+$black: #000;
+$theme-color: #ffb44f;
+$black-opacity1: rgba(0,0,0,0.1);
+$black-opacity2: rgba(0,0,0,0.2);
+$black-opacity3: rgba(0,0,0,0.3);
+$black-opacity4: rgba(0,0,0,0.4);
+$black-opacity5: rgba(0,0,0,0.5);
+$black-opacity6: rgba(0,0,0,0.6);
+$black-opacity7: rgba(0,0,0,0.7);
+$black-opacity8: rgba(0,0,0,0.8);
+$black-opacity9: rgba(0,0,0,0.9);
+$theme-orange: #ff9f23;
+$link-light: #ffc376;
+
+//bg patterns
+$bgpattern:url('./img/bg-pattern.png')center;
+
+// Theme Fonts
+$roboto-thin: Roboto Thin;
+$roboto-lit: Roboto Light;
+$roboto-reg: Roboto Regular;
+$roboto-med: Roboto Medium;
+$roboto-bol: Roboto Bold;
+$roboto-blk: Roboto Black;
+$wonkacons: Wonka Icons;
+
+@font-face {
+    font-family:  'Wonka Icons';
+    src: url('../fonts/wonka-icons.otf');
+    src: url('../fonts/wonka-icons.woff') format('woff'),
+    url('../fonts/wonka-icons.ttf') format('truetype'),
+    url('../fonts/wonka-icons.svg#wonka_icons') format('svg')
+}
+@font-face {
+    font-family:  'Roboto Thin';
+    src: url('../fonts/Roboto-Thin.ttf');
+}
+@font-face {
+    font-family:  'Roboto Light';
+    src: url('../fonts/Roboto-Light.ttf');
+}
+@font-face {
+    font-family:  'Roboto Regular';
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family:  'Roboto Medium';
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+@font-face {
+    font-family:  'Roboto Bold';
+    src: url('../fonts/Roboto-Bold.ttf');
+}
+@font-face {
+    font-family:  'Roboto Black';
+    src: url('../fonts/Roboto-Black.ttf');
+}
 
 /*--------------------------------------------------------------
 # Normalize
