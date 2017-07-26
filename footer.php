@@ -58,7 +58,7 @@
 				<nav id="footer-4-navigation" class="footer-4-navigation">
 					<?php
 						wp_nav_menu( array(
-							'theme_location' => 'menu-4',
+							'theme_location' => 'menu-5',
 							'menu_id'        => 'connect-menu',
 						) );
 					?>

@@ -23,7 +23,6 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'adventurous-dad-of-5' ); ?></a>
-
 	<header id="masthead" class="container-fuild site-header">
 		<div class="row site-branding">
 		<div class="hidden-xs hidden-sm col-md-4">
