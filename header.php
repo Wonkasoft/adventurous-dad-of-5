@@ -64,7 +64,7 @@
 		  ) ); ?>
 		</div><!-- .site-branding -->
 		<div class="col-xs-12">
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-8 col-md-offset-2">
 			<nav id="site-navigation" class="navbar navbar-default">
 			    <div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#adventurous-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span>

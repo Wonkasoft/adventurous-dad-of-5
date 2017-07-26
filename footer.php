@@ -64,7 +64,6 @@
 					?>
 				</nav><!-- #site-navigation -->
 			</div> <!-- /column -->
-		</div> <!-- /column -->
 		<div class="site-info">
 			
 			<?php
@@ -72,6 +71,7 @@
 				printf( esc_html__( 'Site created for: %1$s by %2$s.', 'adventurous-dad-of-5' ), 'adventurous-dad-of-5', '<a href="https://wonkasoft.com/" target="_blank">Wonkasoft</a>' );
 			?>
 		</div><!-- .site-info -->
+		</div> <!-- /column -->
 	</footer><!-- /row #colophon -->
 </div><!-- #page -->
 
