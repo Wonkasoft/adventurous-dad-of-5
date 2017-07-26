@@ -1,0 +1,21 @@
+header#masthead {
+  box-shadow: 0 2px 4px 2px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 100;
+}
+
+.wp-custom-logo .logo-link .custom-logo {
+	max-width: 200px;
+	margin-top: 20px;
+}
+
+.wp-custom-logo .site-title > a {
+	font-size: 70pt;
+	font-family: $roboto-bol;
+	text-shadow: 3px 2px 4px $black-opacity8;
+	color: $theme-color;
+}
+
+.wp-custom-logo .site-title > a:hover, .wp-custom-logo .site-title > a:focus {
+	text-decoration: none;
+}

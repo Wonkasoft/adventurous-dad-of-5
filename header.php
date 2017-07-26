@@ -21,15 +21,14 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'adventurous-dad-of-5' ); ?></a>
-	<header id="masthead" class="container-fuild site-header">
-		<div class="row site-branding">
-		<div class="hidden-xs hidden-sm col-md-4">
+<div id="page" class="container-fluid site">
+	<header id="masthead" style="background: url(<?php echo get_header_image(); ?>); background-repeat: no-repeat; background-size: cover; background-position: center bottom;" class="row site-header">
+		<div class="site-branding">
+		<div class="hidden-xs hidden-sm col-md-2">
 			<?php
 			if (!has_custom_logo()) {
 			  ?><a class="logo-link" href="<?php echo esc_url(home_url('/')); ?>">
-			  <img class="img-responsive center-block default-logo" src="<?php echo get_template_directory_uri() . '/assets/images/adventurous-logo.png'; ?>" /></a>
+			  <img class="img-responsive center-block default-logo" src="<?php echo get_template_directory_uri() . '/img/adventurous-logo.png'; ?>" /></a>
 			  <?php 
 			} else { 
 			    $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -38,6 +37,10 @@
 			  <img class="img-responsive center-block custom-logo" src="<?php echo wp_get_attachment_url( $custom_logo_id ); ?>" /></a>
 			  <?php
 			}
+			?>
+			</div>  <!-- end col -->
+			<div class="hidden-xs hidden-sm col-md-5">
+			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
@@ -51,17 +54,35 @@
 			<?php
 			endif; ?>
 		</div>  <!-- end col -->
+		<?php wp_nav_menu( array( 
+		  'menu_class' => 'w-sub-menu pull-right', 
+		  'container_class' => 'hidden-xs hidden-sm col-md-5 pull-right',
+		  'theme_location' => 'sub', 
+		  'fallback_cb' => 'WS_Walker_Nav_Badge::fallback',
+		  'walker' => new WS_Walker_Nav_Badge(),
+		  'depth' => 1,
+		  ) ); ?>
 		</div><!-- .site-branding -->
+		<div class="col-xs-12">
+			<div class="col-md-6 col-md-offset-3">
+			<nav id="site-navigation" class="navbar navbar-default">
+			    <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#adventurous-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span></button>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+						'container_class' => 'collapse navbar-collapse',
+						'container_id' => 'adventurous-navbar',
+					) );
+				?>
+				</div> <!-- end .navbar-header -->
+			</nav><!-- #site-navigation -->
+			</div>
+		</div> <!-- /col -->
 
-		<nav id="site-navigation" class="main-navigation aligncenter">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( ':::', 'adventurous-dad-of-5' ); ?></button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+	<div id="content" class="row site-content">

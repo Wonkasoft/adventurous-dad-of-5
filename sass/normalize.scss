@@ -15,20 +15,17 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-/* Sections
-   ========================================================================== */
-
-/**
- * Remove the margin in all browsers (opinionated).
- */
-
+html,
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-/**
- * Add the correct display in IE 9-.
- */
+#page {
+  position: relative;
+  min-height: 100%;
+}
 
 article,
 aside,
@@ -82,14 +79,11 @@ hr {
   overflow: visible; /* 2 */
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
 
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+a:active,
+a:hover {
+  outline: 0;
+  text-decoration: none;
 }
 
 /* Text-level semantics
@@ -366,6 +360,7 @@ textarea {
   height: auto;
 }
 
+
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
@@ -444,4 +439,9 @@ template {
 
 [hidden] {
   display: none;
+}
+
+td,
+th {
+  padding: 0;
 }

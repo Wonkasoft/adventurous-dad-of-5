@@ -13,8 +13,8 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer container-fluid">
-		<div class="row">
+	<footer id="colophon" class="row site-footer">
+		<div class="col-xs-12">
 			<div class="col-xs-12 col-md-3">
 			<h3 class="footer-header">EXPLORE</h3>
 			<nav id="footer-1-navigation" class="footer-1-navigation">
@@ -64,7 +64,7 @@
 					?>
 				</nav><!-- #site-navigation -->
 			</div> <!-- /column -->
-		</div> <!-- /row -->
+		</div> <!-- /column -->
 		<div class="site-info">
 			
 			<?php
@@ -72,7 +72,7 @@
 				printf( esc_html__( 'Site created for: %1$s by %2$s.', 'adventurous-dad-of-5' ), 'adventurous-dad-of-5', '<a href="https://wonkasoft.com/" target="_blank">Wonkasoft</a>' );
 			?>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	</footer><!-- /row #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -176,3 +176,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Includes Walker Class file.
+ */
+require get_template_directory() .'/inc/WS-walker.php';
