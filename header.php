@@ -21,10 +21,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<header id="masthead" style="background: url(<?php echo get_header_image(); ?>); background-repeat: no-repeat; background-size: cover; background-position: center bottom;" class="site-header">
-	<div class="container-fluid">
-		<div class="row site-branding">
+<div id="page" class="container-fluid site">
+	<header id="masthead" style="background: url(<?php echo get_header_image(); ?>); background-repeat: no-repeat; background-size: cover; background-position: center bottom;" class="row site-header">
+		<div class="site-branding">
 		<div class="hidden-xs hidden-sm col-md-2">
 			<?php
 			if (!has_custom_logo()) {
@@ -64,7 +63,6 @@
 		  'depth' => 1,
 		  ) ); ?>
 		</div><!-- .site-branding -->
-		<div class="row">
 		<div class="col-xs-12">
 			<div class="col-md-6 col-md-offset-3">
 			<nav id="site-navigation" class="navbar navbar-default">
@@ -84,10 +82,7 @@
 				</div> <!-- end .navbar-header -->
 			</nav><!-- #site-navigation -->
 			</div>
-		</div>
-		</div>	
+		</div> <!-- /col -->
 
-		</div> <!-- end .container-fluid -->
 	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+	<div id="content" class="row site-content">
