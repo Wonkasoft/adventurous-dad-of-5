@@ -8,6 +8,12 @@ ul {
 	}
 }
 
+#masthead ul li a {
+	font-family: $roboto-reg;
+	color: $white;
+	text-shadow: 1px 1px 2px $black-opacity8;
+}
+
 #masthead .navbar-default {
 	background: $navbar-color;
 	border: none;
@@ -30,10 +36,7 @@ ul {
 }
 
 #primary-menu li a {
-	font-family: $roboto-reg;
-	color: $white;
 	font-size: 16pt;
-	text-shadow: 1px 1px 2px $black-opacity8;
 }
 
 #primary-menu li a:hover, #primary-menu li a:focus {
