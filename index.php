@@ -14,43 +14,82 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
+		<div class="col-xs-12 col-md-6">
+			<img class="img-responsive" src="<?php echo get_template_directory_uri() . '/img/map.png'; ?>">
+		</div> <!-- /left col for map content -->
 
-		<?php
-		if ( have_posts() ) :
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="assorted-content-title col-xs-12 text-center">
+					Gear
+				</div> <!-- /title for assorted content -->
+				<div class="col-xs-12 text-center">
+				</div> <!-- /col for gear content -->
+			</div> <!-- /row -->
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+			<div class="row">
+				<div class="assorted-content-title col-xs-12 text-center">
+					Location/Images
+				</div> <!-- /title for assorted content -->
+				<div class="col-xs-12 text-center">
+				</div> <!-- /col for location / images content -->
+			</div> <!-- /row -->
 
-			<?php
-			endif;
+			<div class="row">
+				<div class="assorted-content-title col-xs-12 text-center">
+					Blog/Vlog
+				</div> <!-- /title for assorted content -->
+				<div class="col-xs-12 text-center">
+				</div> <!-- /col for blog/vlog content -->
+			</div> <!-- /row -->
+		</div> <!-- /right col for assorted content -->
+		
+		<div class="col-xs-12 text-center">
+			<h1 class="shop-title">SHOP</h1>
+		</div> <!-- /shop title -->
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+		<!-- Shop Modules -->
+		<div class="col-xs-12 col-md-10 col-md-offset-1 shop-module">
+			<div class="col-xs-12 col-md-4">
+				
+			</div>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+			<div class="col-xs-12 col-md-4">
 
-			endwhile;
+			</div>
 
-			the_posts_navigation();
+			<div class="col-xs-12 col-md-4">
 
-		else :
+			</div>
+		</div> <!-- /12 xs col wrap 10 md offset 1-->
+		<!-- End of Shop Modules -->
 
-			get_template_part( 'template-parts/content', 'none' );
+		<!-- Full width panel for Who is Adventurous Dad? -->
+		<div class="col-xs-12 adventurous-about">
+			<div class="col-xs-12 text-center">
+				<h1 class="about-title">Who is Adventurous Dad ?</h1>
+			</div> <!-- /col for about title -->
+			<div class="col-xs-12 col-md-10 col-md-offset-1">
+				
+				<div class="col-xs-12 col-md-4 text-center">
+					<a href="#" class="about-links">GALLERY</a>
+				</div>
+				
+				<div class="col-xs-12 col-md-4 text-center">
+					<a href="#" class="about-links">ABOUT ME</a>
+				</div>
+				<div class="col-xs-12 col-md-4 text-center">
+					<a href="#" class="about-links">MY SPONSORS</a>
+				</div>
+			</div> <!-- /col xs-12 col-md-10 col-md-offset-1 -->
+		</div> <!-- /col xs 12 for about section -->
+		<!-- End of Full width panel for Who is Adventurous Dad? section -->
 
-		endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

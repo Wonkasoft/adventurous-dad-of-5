@@ -126,7 +126,6 @@ add_action( 'widgets_init', 'adventurous_dad_of_5_widgets_init' );
  * Enqueue scripts and styles.
  */
 function adventurous_dad_of_5_scripts() {
-	wp_enqueue_style( 'adventurous-dad-of-5-style', get_stylesheet_uri() );
 
 	// Check to see if bootstrap style is already enqueue before setting the enqueue
 	$style = 'bootstrap';
@@ -134,6 +133,8 @@ function adventurous_dad_of_5_scripts() {
     //queue up your bootstrap
 		wp_enqueue_style( $style, get_template_directory_uri() . '/css/bootstrap.min.css', '3.3.7', 'all' );
 	}
+	
+	wp_enqueue_style( 'adventurous-dad-of-5-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'adventurous-dad-of-5-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
