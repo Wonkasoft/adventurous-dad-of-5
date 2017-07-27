@@ -16,14 +16,13 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
-		<div class="col-xs-12 col-md-6">
-			<img class="img-responsive" src="<?php echo get_template_directory_uri() . '/img/map.png'; ?>">
+		<div class="col-xs-12 col-md-6" style="background: url(<?php echo get_template_directory_uri() . '/img/map.png'; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;">
 		</div> <!-- /left col for map content -->
 
 		<div class="col-xs-12 col-md-6">
 			<div class="row">
 				<div class="assorted-content-title col-xs-12 text-center">
-					Gear
+					<h3 class="panel-title">Gear</h3>
 				</div> <!-- /title for assorted content -->
 				<div class="col-xs-12 text-center">
 				</div> <!-- /col for gear content -->
@@ -31,7 +30,7 @@ get_header(); ?>
 
 			<div class="row">
 				<div class="assorted-content-title col-xs-12 text-center">
-					Location/Images
+					<h3 class="panel-title">Location/Images</h3>
 				</div> <!-- /title for assorted content -->
 				<div class="col-xs-12 text-center">
 				</div> <!-- /col for location / images content -->
@@ -39,13 +38,14 @@ get_header(); ?>
 
 			<div class="row">
 				<div class="assorted-content-title col-xs-12 text-center">
-					Blog/Vlog
+					<h3 class="panel-title">Blog/Vlog</h3>
 				</div> <!-- /title for assorted content -->
 				<div class="col-xs-12 text-center">
 				</div> <!-- /col for blog/vlog content -->
 			</div> <!-- /row -->
 		</div> <!-- /right col for assorted content -->
-		
+		</main><!-- #main -->
+		<section id="shop-section">
 		<div class="col-xs-12 text-center">
 			<h1 class="shop-title">SHOP</h1>
 		</div> <!-- /shop title -->
@@ -53,21 +53,29 @@ get_header(); ?>
 		<!-- Shop Modules -->
 		<div class="col-xs-12 col-md-10 col-md-offset-1 shop-module">
 			<div class="col-xs-12 col-md-4">
+				<div class="col-xs-12">
 				
+				</div>
 			</div>
 
 			<div class="col-xs-12 col-md-4">
-
+				<div class="col-xs-12">
+				
+				</div>
 			</div>
 
 			<div class="col-xs-12 col-md-4">
-
+				<div class="col-xs-12">
+				
+				</div>
 			</div>
 		</div> <!-- /12 xs col wrap 10 md offset 1-->
 		<!-- End of Shop Modules -->
+		</section>
 
+		<section id="about-section">
 		<!-- Full width panel for Who is Adventurous Dad? -->
-		<div class="col-xs-12 adventurous-about">
+		<div class="col-xs-12 adventurous-about" style="background: url(<?php echo get_template_directory_uri() . '/img/capture45.jpg'; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;">
 			<div class="col-xs-12 text-center">
 				<h1 class="about-title">Who is Adventurous Dad ?</h1>
 			</div> <!-- /col for about title -->
@@ -86,9 +94,9 @@ get_header(); ?>
 			</div> <!-- /col xs-12 col-md-10 col-md-offset-1 -->
 		</div> <!-- /col xs 12 for about section -->
 		<!-- End of Full width panel for Who is Adventurous Dad? section -->
+		</section>
 
-
-	</main><!-- #main -->
+	
 </div><!-- #primary -->
 
 <?php
