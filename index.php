@@ -16,8 +16,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
-		<div class="col-xs-12 col-md-6">
-			<img class="img-responsive" src="<?php echo get_template_directory_uri() . '/img/map.png'; ?>">
+		<div class="col-xs-12 col-md-6" style="background: url(<?php echo get_template_directory_uri() . '/img/map.png'; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;">
 		</div> <!-- /left col for map content -->
 
 		<div class="col-xs-12 col-md-6">
@@ -54,15 +53,21 @@ get_header(); ?>
 		<!-- Shop Modules -->
 		<div class="col-xs-12 col-md-10 col-md-offset-1 shop-module">
 			<div class="col-xs-12 col-md-4">
+				<div class="col-xs-12">
 				
+				</div>
 			</div>
 
 			<div class="col-xs-12 col-md-4">
-
+				<div class="col-xs-12">
+				
+				</div>
 			</div>
 
 			<div class="col-xs-12 col-md-4">
-
+				<div class="col-xs-12">
+				
+				</div>
 			</div>
 		</div> <!-- /12 xs col wrap 10 md offset 1-->
 		<!-- End of Shop Modules -->
@@ -70,7 +75,7 @@ get_header(); ?>
 
 		<section id="about-section">
 		<!-- Full width panel for Who is Adventurous Dad? -->
-		<div class="col-xs-12 adventurous-about">
+		<div class="col-xs-12 adventurous-about" style="background: url(<?php echo get_template_directory_uri() . '/img/capture45.jpg'; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;">
 			<div class="col-xs-12 text-center">
 				<h1 class="about-title">Who is Adventurous Dad ?</h1>
 			</div> <!-- /col for about title -->
