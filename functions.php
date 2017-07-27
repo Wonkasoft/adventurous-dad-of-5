@@ -129,7 +129,7 @@ function adventurous_dad_of_5_scripts() {
 
 	// Check to see if bootstrap style is already enqueue before setting the enqueue
 	$style = 'bootstrap';
-	if( ( ! wp_style_is( $style, 'enqueued' ) ) && ( ! wp_style_is( $style, 'done' ) ) ) {
+	if ( ! wp_style_is( $style, 'enqueued' ) && ! wp_style_is( $style, 'done' ) ) {
     //queue up your bootstrap
 		wp_enqueue_style( $style, get_template_directory_uri() . '/css/bootstrap.min.css', '3.3.7', 'all' );
 	}
