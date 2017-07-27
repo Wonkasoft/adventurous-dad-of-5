@@ -3,3 +3,43 @@
   background: linear-gradient(-213deg, #eee 0%, #cdc 100%);
   padding-bottom: 337px;
 }
+
+#main > div {
+	background: $content-color;
+	font-family: $roboto-reg;
+	text-transform: uppercase;
+	height: 785px;
+	color: $white;
+	text-shadow: 1px 1px 2px $black-opacity8;
+}
+
+#main > div:nth-child(2) > div > div:first-child {
+	height: 48px;
+}
+
+#main > div:nth-child(2) > div > div:nth-child(2) {
+	background: $white;
+	height: 214px;
+}
+
+#main > div:nth-child(2) h3 {
+	display: block;
+	padding: 1.1rem 0;
+	font-size: 18pt;
+}
+
+#about-section h1.about-title {
+	font-family: $roboto-blk;
+	text-transform: uppercase;
+	font-size: 36pt;
+	color: $white;
+	text-shadow: 1px 1px 2px $black-opacity8;
+}
+
+#about-section .about-links {
+	font-family: $roboto-blk;
+	text-transform: uppercase;
+	font-size: 22pt;
+	color: $white;
+	text-shadow: 1px 1px 2px $black-opacity8;
+}

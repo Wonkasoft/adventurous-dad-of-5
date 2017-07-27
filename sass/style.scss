@@ -75,8 +75,8 @@ $brand-font-size-lg: 30pt;
 
 // Theme Colors
 $header-color: linear-gradient(-214deg, rgba(37, 60, 94, .8) 0%, rgba(37, 60, 94, 1) 100%);
-$navbar-color: linear-gradient(-214deg, rgba(#808080, .9) 0%, rgba(#595959, 1) 100%);
-$mega-color: linear-gradient(-214deg, rgba(#dabb83, .8) 0%, rgba(#dabb83, 1) 100%);
+$navbar-color: linear-gradient(-214deg, rgba(#808080, 1) 0%, rgba(#595959, 1) 100%);
+$content-color: radial-gradient(circle, rgba(#808080, 1) 0%, rgba(#595959, 1) 100%);
 $button-color: linear-gradient(-214deg, rgba(#ffb04a, .8) 0%, rgba(#e38000, 1) 100%);
 $button-hover: linear-gradient(-214deg, rgba(#e38000, .8) 0%, rgba(#ffb04a, 1) 100%);
 $white: #fff;
