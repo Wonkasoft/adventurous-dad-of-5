@@ -1,3 +1,29 @@
+@-webkit-keyframes gradientanimation {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+@-moz-keyframes gradientanimation {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+@-o-keyframes gradientanimation {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+@keyframes gradientanimation { 
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+#search-input,
+#masthead #search-form button {
+	transition: all .3s ease-in-out;
+}
+
 header#masthead {
   box-shadow: 0 2px 4px 2px rgba(0,0,0,0.4);
   position: relative;
@@ -18,4 +44,30 @@ header#masthead {
 
 .wp-custom-logo .site-title > a:hover, .wp-custom-logo .site-title > a:focus {
 	text-decoration: none;
+}
+
+#masthead #search-input {
+	float: right;
+	width: 12%;
+}
+
+#masthead #search-input:focus {
+	width: 30%;
+}
+
+#masthead #search-form button {
+	background: $button-color;
+	background-size: 400% 400%;
+}
+
+#masthead #search-form button:hover {
+	-webkit-animation: gradientanimation 2s ease-in-out infinite;
+	-moz-animation: gradientanimation 2s ease-in-out infinite;
+	-o-animation: gradientanimation 2s ease-in-out infinite;
+	animation: gradientanimation 2s ease-in-out infinite;
+}
+
+#masthead #search-form i {
+	color: $white;
+	text-shadow: 1px 1px 2px $black-opacity8;
 }
