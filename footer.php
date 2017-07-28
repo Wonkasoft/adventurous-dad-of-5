@@ -20,7 +20,7 @@
 			<nav id="footer-1-navigation" class="footer-1-navigation">
 				<?php
 					wp_nav_menu( array(
-						'theme_location' => 'menu-2',
+						'theme_location' => 'menu-3',
 						'menu_id'        => 'explore-menu',
 					) );
 				?>
@@ -32,7 +32,7 @@
 				<nav id="footer-2-navigation" class="footer-2-navigation">
 					<?php
 						wp_nav_menu( array(
-							'theme_location' => 'menu-3',
+							'theme_location' => 'menu-4',
 							'menu_id'        => 'about-menu',
 						) );
 					?>
@@ -44,7 +44,7 @@
 				<nav id="footer-3-navigation" class="footer-3-navigation">
 					<?php
 						wp_nav_menu( array(
-							'theme_location' => 'menu-4',
+							'theme_location' => 'menu-5',
 							'menu_id'        => 'contact-menu',
 						) );
 					?>
@@ -54,11 +54,18 @@
 			<div class="col-xs-12 col-md-3">
 				<h3 class="footer-header">CONNECT</h3>
 				<span>UPDATES & SPECIALS SIGN UP NOW</span>
-				<?php get_search_form(); ?>
+				
+				<form class="form-inline">
+				  <div class="form-group">
+				    <input type="email" class="form-control" id="email-signup" placeholder="jane.doe@example.com">
+				  </div>
+				  <button type="submit" class="btn btn-default">Sign Up</button>
+				</form>	
+
 				<nav id="footer-4-navigation" class="footer-4-navigation">
 					<?php
 						wp_nav_menu( array(
-							'theme_location' => 'menu-5',
+							'theme_location' => 'menu-6',
 							'menu_id'        => 'connect-menu',
 						) );
 					?>

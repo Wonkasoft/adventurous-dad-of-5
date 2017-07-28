@@ -48,24 +48,29 @@ function adventurous_dad_of_5_setup() {
 		'menu-1' => esc_html__( 'Primary', 'adventurous-dad-of-5' ),
 	) );
 
+	// This is the Sub Menu and used in the header.php file
+	register_nav_menus( array(
+		'menu-2' => esc_html__( 'SubMenu', 'adventurous-dad-of-5' ),
+	) );
+
 	// This menu is on the footer for the explore menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-2' => esc_html__( 'Explore', 'adventurous-dad-of-5' ),
+		'menu-3' => esc_html__( 'Explore', 'adventurous-dad-of-5' ),
 	) );
 
 	// This menu is on the footer for the about menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-3' => esc_html__( 'About', 'adventurous-dad-of-5' ),
+		'menu-4' => esc_html__( 'About', 'adventurous-dad-of-5' ),
 	) );
 
 	// This menu is on the footer for the contact menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-4' => esc_html__( 'Contact', 'adventurous-dad-of-5' ),
+		'menu-5' => esc_html__( 'Contact', 'adventurous-dad-of-5' ),
 	) );
 
 	// This menu is on the footer for the connect menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-5' => esc_html__( 'Connect', 'adventurous-dad-of-5' ),
+		'menu-6' => esc_html__( 'Connect', 'adventurous-dad-of-5' ),
 	) );
 
 	/*

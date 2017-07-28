@@ -56,19 +56,38 @@ get_header(); ?>
 				<div class="col-xs-12">
 				
 				</div>
-			</div>
+			</div> <!-- /module 1 -->
 
 			<div class="col-xs-12 col-md-4">
 				<div class="col-xs-12">
 				
 				</div>
-			</div>
+			</div> <!-- /module 2 -->
 
 			<div class="col-xs-12 col-md-4">
 				<div class="col-xs-12">
 				
 				</div>
-			</div>
+			</div> <!-- /module 3 -->
+
+			<div class="col-xs-12 col-md-4">
+				<div class="col-xs-12">
+				
+				</div>
+			</div> <!-- /module 4 -->
+
+			<div class="col-xs-12 col-md-4">
+				<div class="col-xs-12">
+				
+				</div>
+			</div> <!-- /module 5 -->
+
+			<div class="col-xs-12 col-md-4">
+				<div class="col-xs-12">
+				
+				</div>
+			</div> <!-- /module 6 -->
+
 		</div> <!-- /12 xs col wrap 10 md offset 1-->
 		<!-- End of Shop Modules -->
 		</section>
