@@ -8,7 +8,7 @@
  */
 
 ?>
-
+<div class="col-xs-12 col-md-4">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -28,3 +28,4 @@
 		<?php adventurous_dad_of_5_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
+</div> <!-- /col per article -->

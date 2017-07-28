@@ -4,7 +4,7 @@
   padding-bottom: 167px;
 }
 
-#main > div {
+.home #main > div {
 	background: $content-color;
 	font-family: $roboto-reg;
 	text-transform: uppercase;
@@ -13,22 +13,22 @@
 	text-shadow: 1px 1px 2px $black-opacity8;
 }
 
-#main > div:nth-child(2) > div > div:first-child {
+.home #main > div:nth-child(2) > div > div:first-child {
 	height: 48px;
 }
 
-#main > div:nth-child(2) > div > div:nth-child(2) {
+.home #main > div:nth-child(2) > div > div:nth-child(2) {
 	background: $white;
 	height: 214px;
 }
 
-#main > div:nth-child(2) h3 {
+.home #main > div:nth-child(2) h3 {
 	display: block;
 	padding: 1.1rem 0;
 	font-size: 18pt;
 }
 
-#shop-section .shop-title {
+.home #shop-section .shop-title {
 	font-family: $roboto-bol;
 	text-transform: uppercase;
 	font-size: 36pt;
@@ -36,22 +36,22 @@
 	text-shadow: 1px 1px 2px $black-opacity8;
 }
 
-#shop-section .shop-module {
+.home #shop-section .shop-module {
 	min-height: 1000px;
 }
 
-#shop-section .shop-module > div {
+.home #shop-section .shop-module > div {
 	padding-bottom: 15px;
 }
 
-#shop-section .shop-module > div > div {
+.home #shop-section .shop-module > div > div {
 	background: $white;
 	max-width: 480px;
 	height: 400px;
-	box-shadow: 0 2px 4px 2px $black-opacity6;
+	box-shadow: 0 2px 4px 2px $black-opacity5;
 }
 
-#about-section h1.about-title {
+.home #about-section h1.about-title {
 	font-family: $roboto-blk;
 	text-transform: uppercase;
 	font-size: 36pt;
@@ -59,7 +59,7 @@
 	text-shadow: 1px 1px 2px $black-opacity8;
 }
 
-#about-section .about-links {
+.home #about-section .about-links {
 	font-family: $bebas;
 	text-transform: uppercase;
 	font-size: 28pt;
@@ -67,6 +67,15 @@
 	text-shadow: 1px 1px 2px $black-opacity8;
 }
 
-#about-section .adventurous-about {
+.home #about-section .adventurous-about {
 	height: 640px;
+}
+
+.search #main > div > article {
+	background: $white;
+	max-width: 480px;
+	height: 400px;
+	box-shadow: 0 2px 4px 2px $black-opacity5;
+	margin-bottom: 15px;
+	padding: 5px 15px;
 }

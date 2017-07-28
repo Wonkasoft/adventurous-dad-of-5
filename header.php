@@ -62,6 +62,9 @@
 		  'walker' => new WS_Walker_Nav_Badge(),
 		  'depth' => 1,
 		  ) ); ?>
+		  <div class="hidden-xs hidden-sm col-md-5">
+		  <?php get_search_form(); ?>
+		  </div>
 		</div><!-- .site-branding -->
 		<div class="col-xs-12">
 			<div class="col-md-8 col-md-offset-2">
