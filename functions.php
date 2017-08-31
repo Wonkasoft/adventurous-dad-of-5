@@ -156,6 +156,7 @@ function adventurous_dad_of_5_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'adventurous_dad_of_5_scripts' );
 
 /**
