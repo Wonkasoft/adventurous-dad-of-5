@@ -4,3 +4,22 @@ footer.site-footer {
   	min-width: 100%;
   	background: $white;
 }
+
+.info-bar {
+	background: #636363;
+}
+
+.site-info,.powered {
+	padding: 10px;
+	color: #ccc;
+	a {
+		color: #cca;
+	}
+}
+
+.wordpress-logo {
+		display: inline-block;
+		width: 20px;
+		padding: 10px 0;
+	}
+

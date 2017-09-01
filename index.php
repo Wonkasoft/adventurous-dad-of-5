@@ -101,14 +101,14 @@ get_header(); ?>
 			<div class="col-xs-12 col-md-10 col-md-offset-1">
 				
 				<div class="col-xs-12 col-md-4 text-center">
-					<a href="#" class="about-links">GALLERY</a>
+					<a href="./gallery/" class="about-links">GALLERY</a>
 				</div>
 				
 				<div class="col-xs-12 col-md-4 text-center">
-					<a href="#" class="about-links">ABOUT ME</a>
+					<a href="./about-me/" class="about-links">ABOUT ME</a>
 				</div>
 				<div class="col-xs-12 col-md-4 text-center">
-					<a href="#" class="about-links">MY SPONSORS</a>
+					<a href="./my-sponsors/" class="about-links">MY SPONSORS</a>
 				</div>
 			</div> <!-- /col xs-12 col-md-10 col-md-offset-1 -->
 		</div> <!-- /col xs 12 for about section -->
