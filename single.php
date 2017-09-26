@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-
+	<div class="col-xs-12 col-md-9">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -29,7 +29,9 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+	</div> <!-- /col -->
+	<div class="col-xs-12 col-md-3">
+			<?php get_sidebar(); ?>
+		</div> <!-- /col sidebar -->
 <?php
-get_sidebar();
 get_footer();

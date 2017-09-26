@@ -16,7 +16,10 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
-		<div class="col-xs-12 col-md-6" style="background: url(<?php echo get_template_directory_uri() . '/img/map.png'; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;">
+		<div class="col-xs-12 col-md-6">
+			<?php 
+				get_template_part( 'template-parts/location', 'map' );
+			?>
 		</div> <!-- /left col for map content -->
 
 		<div class="col-xs-12 col-md-6">
@@ -75,6 +78,7 @@ get_header(); ?>
 
 		<section id="about-section">
 		<!-- Full width panel for Who is Adventurous Dad? -->
+		<!-- Style inline so that it will pull image from what is set in customizer -->
 		<div class="col-xs-12 adventurous-about" style="background: url(<?php echo get_template_directory_uri() . '/img/capture45.jpg'; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;">
 			<div class="col-xs-12 text-center">
 				<h1 class="about-title">Who is Adventurous Dad ?</h1>
