@@ -11,9 +11,48 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function adventurous_dad_of_5_customize_register( $wp_customize ) {
+	
+	//  Adding customizer section for the 6 featured images on the home page
+	$wp_customize->add_section( 'featured_images' , array(
+    'title'      => __( 'Featured Images', 'adventurous-dad-of-5' ),
+    'priority'   => 30,
+	) );
+
+	// Loop for all 6 featured images and link controls / settings
+	// Started at 1 so the first image label will read 1 and not 0
+	for ($i=1; $i < 7; $i++) { 
+		
+		$wp_customize->add_setting( 'featured_image_'.$i , array(
+	    'default'   => '',
+	    'transport' => 'refresh',
+		) );
+
+		$wp_customize->add_setting( 'featured_link_'.$i , array(
+	    'default'   => '',
+	    'transport' => 'refresh',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'featured_image_'.$i, array(
+			'label'      => __( 'Featured Image '.$i, 'adventurous-dad-of-5' ),
+			'section'    => 'featured_images',
+			'setting'   => 'featured_image_'.$i,
+			'description'	=> 'Choose an image for featured section in slot '.$i,
+		) ) );
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'featured_link_'.$i, array(
+			'label'      	=> __( 'Featured Link '.$i, 'adventurous-dad-of-5' ),
+			'section'    	=> 'featured_images',
+			'setting'   	=> 'featured_link_'.$i,
+			'type'			 	=> 'url',
+			'description'	=> 'https://yourlink.com',
+		) ) );
+
+	}
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(

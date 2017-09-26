@@ -57,7 +57,7 @@
 		<?php wp_nav_menu( array( 
 		  'menu_class' => 'w-sub-menu pull-right', 
 		  'container_class' => 'hidden-xs hidden-sm col-md-5 pull-right',
-		  'theme_location' => 'sub', 
+		  'theme_location' => 'menu-2', 
 		  'fallback_cb' => 'WS_Walker_Nav_Badge::fallback',
 		  'walker' => new WS_Walker_Nav_Badge(),
 		  'depth' => 1,

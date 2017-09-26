@@ -57,21 +57,40 @@ get_header(); ?>
 		<div class="col-xs-12 col-md-10 col-md-offset-1 shop-module">
 			<div class="col-xs-12 col-md-4">
 				<div class="col-xs-12">
-				
+					<a href="<?php echo get_theme_mod('featured_link_1');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_1'); ?>" class="img-responsive" alt="featured image 1"></a>
 				</div>
-			</div>
+			</div> <!-- /module 1 -->
 
 			<div class="col-xs-12 col-md-4">
 				<div class="col-xs-12">
-				
+				<a href="<?php echo get_theme_mod('featured_link_2');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_2'); ?>" class="img-responsive" alt="featured image 2"></a>
 				</div>
-			</div>
+			</div> <!-- /module 2 -->
 
 			<div class="col-xs-12 col-md-4">
 				<div class="col-xs-12">
-				
+				<a href="<?php echo get_theme_mod('featured_link_3');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_3'); ?>" class="img-responsive" alt="featured image 3"></a>
 				</div>
-			</div>
+			</div> <!-- /module 3 -->
+
+			<div class="col-xs-12 col-md-4">
+				<div class="col-xs-12">
+					<a href="<?php echo get_theme_mod('featured_link_4');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_4'); ?>" class="img-responsive" alt="featured image 4"></a>
+				</div>
+			</div> <!-- /module 4 -->
+
+			<div class="col-xs-12 col-md-4">
+				<div class="col-xs-12">
+					<a href="<?php echo get_theme_mod('featured_link_5');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_5'); ?>" class="img-responsive" alt="featured image 5"></a>
+				</div>
+			</div> <!-- /module 5 -->
+
+			<div class="col-xs-12 col-md-4">
+				<div class="col-xs-12">
+					<a href="<?php echo get_theme_mod('featured_link_6');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_6'); ?>" class="img-responsive" alt="featured image 6"></a>
+				</div>
+			</div> <!-- /module 6 -->
+
 		</div> <!-- /12 xs col wrap 10 md offset 1-->
 		<!-- End of Shop Modules -->
 		</section>
@@ -86,14 +105,14 @@ get_header(); ?>
 			<div class="col-xs-12 col-md-10 col-md-offset-1">
 				
 				<div class="col-xs-12 col-md-4 text-center">
-					<a href="#" class="about-links">GALLERY</a>
+					<a href="./gallery/" class="about-links">GALLERY</a>
 				</div>
 				
 				<div class="col-xs-12 col-md-4 text-center">
-					<a href="#" class="about-links">ABOUT ME</a>
+					<a href="./about-me/" class="about-links">ABOUT ME</a>
 				</div>
 				<div class="col-xs-12 col-md-4 text-center">
-					<a href="#" class="about-links">MY SPONSORS</a>
+					<a href="./my-sponsors/" class="about-links">MY SPONSORS</a>
 				</div>
 			</div> <!-- /col xs-12 col-md-10 col-md-offset-1 -->
 		</div> <!-- /col xs 12 for about section -->

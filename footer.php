@@ -20,7 +20,7 @@
 			<nav id="footer-1-navigation" class="footer-1-navigation">
 				<?php
 					wp_nav_menu( array(
-						'theme_location' => 'menu-2',
+						'theme_location' => 'menu-3',
 						'menu_id'        => 'explore-menu',
 					) );
 				?>
@@ -32,7 +32,7 @@
 				<nav id="footer-2-navigation" class="footer-2-navigation">
 					<?php
 						wp_nav_menu( array(
-							'theme_location' => 'menu-3',
+							'theme_location' => 'menu-4',
 							'menu_id'        => 'about-menu',
 						) );
 					?>
@@ -44,7 +44,7 @@
 				<nav id="footer-3-navigation" class="footer-3-navigation">
 					<?php
 						wp_nav_menu( array(
-							'theme_location' => 'menu-4',
+							'theme_location' => 'menu-5',
 							'menu_id'        => 'contact-menu',
 						) );
 					?>
@@ -54,25 +54,37 @@
 			<div class="col-xs-12 col-md-3">
 				<h3 class="footer-header">CONNECT</h3>
 				<span>UPDATES & SPECIALS SIGN UP NOW</span>
-				<?php get_search_form(); ?>
+				
+				<form class="form-inline">
+				  <div class="form-group">
+				    <input type="email" class="form-control" id="email-signup" placeholder="jane.doe@example.com">
+				  </div>
+				  <button type="submit" class="btn btn-default">Sign Up</button>
+				</form>	
+
 				<nav id="footer-4-navigation" class="footer-4-navigation">
 					<?php
 						wp_nav_menu( array(
-							'theme_location' => 'menu-5',
+							'theme_location' => 'menu-6',
 							'menu_id'        => 'connect-menu',
 						) );
 					?>
 				</nav><!-- #site-navigation -->
 			</div> <!-- /column -->
-		<div class="col-xs-12">
-		<div class="site-info">
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Site created for: %1$s by %2$s.', 'adventurous-dad-of-5' ), 'adventurous-dad-of-5', '<a href="https://wonkasoft.com/" target="_blank">Wonkasoft</a>' );
-			?>
-		</div> <!-- .site-info -->
 		</div> <!-- /column -->
-		</div> <!-- /column -->
+			<div class="col-xs-12 info-bar">
+			<div class="col-xs-12 col-md-10 text-center">
+					<div class="site-info">
+						<?php
+							/* translators: 1: Theme name, 2: Theme author. */
+							printf( esc_html__( 'Site Created for %1$s by %2$s', 'adventurous-dad-of-5' ), 'Adventurous Dad of 5', '<a href="https://wonkasoft.com/" target="_blank">Wonkasoft</a>' );
+						?>
+					</div> <!-- .site-info -->
+					</div>
+					<div class="col-xs-12 col-md-2 text-center">
+						<span class="powered">Powered by</span><a href="https://wordpress.org" target="_blank"><img class="img-responsive wordpress-logo" src="https://s.w.org/about/images/logos/wordpress-logo-32.png" alt="WP Logo" /></a>
+					</div> <!-- /wordpress-logo -->
+			</div> <!-- /column -->
 	</footer> <!-- /row #colophon -->
 </div> <!-- #page -->
 

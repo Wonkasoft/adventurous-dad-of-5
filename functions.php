@@ -48,24 +48,29 @@ function adventurous_dad_of_5_setup() {
 		'menu-1' => esc_html__( 'Primary', 'adventurous-dad-of-5' ),
 	) );
 
+	// This is the Sub Menu and used in the header.php file
+	register_nav_menus( array(
+		'menu-2' => esc_html__( 'SubMenu', 'adventurous-dad-of-5' ),
+	) );
+
 	// This menu is on the footer for the explore menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-2' => esc_html__( 'Explore', 'adventurous-dad-of-5' ),
+		'menu-3' => esc_html__( 'Explore', 'adventurous-dad-of-5' ),
 	) );
 
 	// This menu is on the footer for the about menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-3' => esc_html__( 'About', 'adventurous-dad-of-5' ),
+		'menu-4' => esc_html__( 'About', 'adventurous-dad-of-5' ),
 	) );
 
 	// This menu is on the footer for the contact menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-4' => esc_html__( 'Contact', 'adventurous-dad-of-5' ),
+		'menu-5' => esc_html__( 'Contact', 'adventurous-dad-of-5' ),
 	) );
 
 	// This menu is on the footer for the connect menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-5' => esc_html__( 'Connect', 'adventurous-dad-of-5' ),
+		'menu-6' => esc_html__( 'Connect', 'adventurous-dad-of-5' ),
 	) );
 
 	/*
@@ -129,7 +134,7 @@ function adventurous_dad_of_5_scripts() {
 
 	// Check to see if bootstrap style is already enqueue before setting the enqueue
 	$style = 'bootstrap';
-	if( ( ! wp_style_is( $style, 'enqueued' ) ) && ( ! wp_style_is( $style, 'done' ) ) ) {
+	if ( ! wp_style_is( $style, 'enqueued' ) && ! wp_style_is( $style, 'done' ) ) {
     //queue up your bootstrap
 		wp_enqueue_style( $style, get_template_directory_uri() . '/css/bootstrap.min.css', '3.3.7', 'all' );
 	}
@@ -151,6 +156,7 @@ function adventurous_dad_of_5_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'adventurous_dad_of_5_scripts' );
 
 /**
