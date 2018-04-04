@@ -114,11 +114,11 @@ gulp.task('imgPress', function() {
 
 gulp.task('watch', function() {
 
-	gulp.watch('**/*.php').on('change', browserSync.reload);
+	gulp.watch('./*.php').on('change', browserSync.reload);
 
-	gulp.watch('./sass/*/*.scss', ['sass']).on('change', browserSync.reload);
+	gulp.watch('./sass/*.scss', ['sass']).on('change', browserSync.reload);
 
-	gulp.watch('./js/*.*', ['js']).on('change', browserSync.reload);
+	gulp.watch('./js/*.js', ['js']).on('change', browserSync.reload);
 
 	gulp.watch('./images/*.{png,jpg,jpeg,gif}', ['imgPress']).on('change', browserSync.reload);
 

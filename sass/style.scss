@@ -1,6 +1,6 @@
-/*
+/*!
 Theme Name: Adventurous Dad Of 5
-Theme URI: http://underscores.me/
+Theme URI: http://wonkasoft.com/adventurous-dad-of-5
 Author: Wonkasoft
 Author URI: https://wonkasoft.com
 Description: An outdoors men theme for the adventurous
@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: adventurous-dad-of-5
-Tags:
+Tags: adventurous, travel, hiking, camping
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -99,6 +99,43 @@ $link-light: #ffc376;
 //bg patterns
 $bgpattern:url('./img/bg-pattern.png')center;
 
+
+@font-face {
+    font-family:  'Wonka Icons';
+    src: url('./fonts/wonka-icons.otf');
+    src: url('./fonts/wonka-icons.woff') format('woff'),
+    url('./fonts/wonka-icons.ttf') format('truetype'),
+    url('./fonts/wonka-icons.svg#wonka_icons') format('svg')
+}
+@font-face {
+    font-family:  'Roboto Thin';
+    src: url('./fonts/Roboto-Thin.ttf');
+}
+@font-face {
+    font-family:  'Roboto Light';
+    src: url('./fonts/Roboto-Light.ttf');
+}
+@font-face {
+    font-family:  'Roboto Regular';
+    src: url('./fonts/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family:  'Roboto Medium';
+    src: url('./fonts/Roboto-Medium.ttf');
+}
+@font-face {
+    font-family:  'Roboto Bold';
+    src: url('./fonts/Roboto-Bold.ttf');
+}
+@font-face {
+    font-family:  'Roboto Black';
+    src: url('./fonts/Roboto-Black.ttf');
+}
+@font-face {
+    font-family:  'BEBAS';
+    src: url('./fonts/BEBAS___.ttf');
+}
+
 // Theme Fonts
 $roboto-thin: 'Roboto Thin';
 $roboto-lit: 'Roboto Light';
@@ -108,42 +145,6 @@ $roboto-bol: 'Roboto Bold';
 $roboto-blk: 'Roboto Black';
 $wonkacons: 'Wonka Icons';
 $bebas: 'BEBAS';
-
-@font-face {
-    font-family:  'Wonka Icons';
-    src: url('../fonts/wonka-icons.otf');
-    src: url('../fonts/wonka-icons.woff') format('woff'),
-    url('../fonts/wonka-icons.ttf') format('truetype'),
-    url('../fonts/wonka-icons.svg#wonka_icons') format('svg')
-}
-@font-face {
-    font-family:  'Roboto Thin';
-    src: url('../fonts/Roboto-Thin.ttf');
-}
-@font-face {
-    font-family:  'Roboto Light';
-    src: url('../fonts/Roboto-Light.ttf');
-}
-@font-face {
-    font-family:  'Roboto Regular';
-    src: url('../fonts/Roboto-Regular.ttf');
-}
-@font-face {
-    font-family:  'Roboto Medium';
-    src: url('../fonts/Roboto-Medium.ttf');
-}
-@font-face {
-    font-family:  'Roboto Bold';
-    src: url('../fonts/Roboto-Bold.ttf');
-}
-@font-face {
-    font-family:  'Roboto Black';
-    src: url('../fonts/Roboto-Black.ttf');
-}
-@font-face {
-    font-family:  'BEBAS';
-    src: url('../fonts/BEBAS___.ttf');
-}
 
 /*--------------------------------------------------------------
 # Normalize

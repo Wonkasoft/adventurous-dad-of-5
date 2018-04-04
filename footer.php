@@ -13,7 +13,8 @@
 
 	</div> <!-- #content -->
 
-	<footer id="colophon" class="row site-footer">
+	<footer id="colophon" class="site-footer">
+		<div class="row">
 		<div class="col-xs-12">
 			<div class="col-xs-12 col-md-3">
 			<h3 class="footer-header">EXPLORE</h3>
@@ -72,6 +73,8 @@
 				</nav><!-- #site-navigation -->
 			</div> <!-- /column -->
 		</div> <!-- /column -->
+	</div> <!-- /row -->
+	<div class="row">
 			<div class="col-xs-12 info-bar">
 			<div class="col-xs-12 text-center">
 					<div class="site-info">
@@ -84,6 +87,7 @@
 					</div> <!-- .site-info -->
 					</div>
 			</div> <!-- /column -->
+			</div> <!-- /row -->
 	</footer> <!-- /row #colophon -->
 </div> <!-- #page -->
 
