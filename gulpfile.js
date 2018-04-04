@@ -32,7 +32,7 @@ gulp.task('default', function(){
 
 });
 
-gulp.task('default', ['sass', 'sass2', 'js', 'imgPress', 'watch', 'browser-sync']);
+gulp.task('default', ['sass', 'js', 'imgPress', 'watch', 'browser-sync']);
 
 gulp.task('init', function() {
 
@@ -72,28 +72,6 @@ gulp.task('sass', function () {
 
 });
 
-gulp.task('sass2', function () {
-
-	return gulp.src('./sass/woocommerce.scss')
-
-	.pipe(sourcemaps.init())
-
-	.pipe(plumber(plumberErrorHandler))
-
-	.pipe(sass())
-
-	.pipe(cleanCSS())
-
-	.pipe(concat('woocommerce.css'))
-
-	.pipe(sourcemaps.write('./maps'))
-
-	.pipe(gulp.dest('./'))
-
-	.pipe(browserSync.stream());
-
-});
-
 gulp.task('js', function () {
 
 	return gulp.src('./js/wonkamizer-js.js')
@@ -108,7 +86,7 @@ gulp.task('js', function () {
 
 	.pipe(concat(themeName + '.min.js'))
 
-	.pipe(gulp.dest('./assets/js'))
+	.pipe(gulp.dest('./js'))
 
 	.pipe(browserSync.stream());
 
@@ -128,7 +106,7 @@ gulp.task('imgPress', function() {
 
 	}))
 
-	.pipe(gulp.dest('./assets/img'))
+	.pipe(gulp.dest('./img'))
 
 	.pipe(browserSync.stream());
 
@@ -138,12 +116,10 @@ gulp.task('watch', function() {
 
 	gulp.watch('**/*.php').on('change', browserSync.reload);
 
-	gulp.watch('./sass/*/*.scss', ['sass', 'sass2']).on('change', browserSync.reload);
-
-	gulp.watch('./sass/*/*/*.scss', ['sass', 'sass2']).on('change', browserSync.reload);
+	gulp.watch('./sass/*/*.scss', ['sass']).on('change', browserSync.reload);
 
 	gulp.watch('./js/*.*', ['js']).on('change', browserSync.reload);
 
-	gulp.watch('./images/*.{png,jpg,gif}', ['imgPress']).on('change', browserSync.reload);
+	gulp.watch('./images/*.{png,jpg,jpeg,gif}', ['imgPress']).on('change', browserSync.reload);
 
 });
