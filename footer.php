@@ -73,17 +73,16 @@
 			</div> <!-- /column -->
 		</div> <!-- /column -->
 			<div class="col-xs-12 info-bar">
-			<div class="col-xs-12 col-md-10 text-center">
+			<div class="col-xs-12 text-center">
 					<div class="site-info">
+						&copy; <?php echo date( 'Y' ); ?> All rights reserved
+						<span class="sep"> | </span>
 						<?php
 							/* translators: 1: Theme name, 2: Theme author. */
 							printf( esc_html__( 'Site Created for %1$s by %2$s', 'adventurous-dad-of-5' ), 'Adventurous Dad of 5', '<a href="https://wonkasoft.com/" target="_blank">Wonkasoft</a>' );
 						?>
 					</div> <!-- .site-info -->
 					</div>
-					<div class="col-xs-12 col-md-2 text-center">
-						<span class="powered">Powered by</span><a href="https://wordpress.org" target="_blank"><img class="img-responsive wordpress-logo" src="https://s.w.org/about/images/logos/wordpress-logo-32.png" alt="WP Logo" /></a>
-					</div> <!-- /wordpress-logo -->
 			</div> <!-- /column -->
 	</footer> <!-- /row #colophon -->
 </div> <!-- #page -->
