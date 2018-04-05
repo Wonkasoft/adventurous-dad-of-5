@@ -15,8 +15,9 @@
 get_header(); ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main">
-		<div class="col-xs-12 col-md-6">
+	<main id="main" class="container-fluid site-main">
+		<div class="row">
+		<div class="col-xs-12 col-md-6 hidden-sm hidden-xs">
 			<?php 
 				get_template_part( 'template-parts/location', 'map' );
 			?>
@@ -47,8 +48,10 @@ get_header(); ?>
 				</div> <!-- /col for blog/vlog content -->
 			</div> <!-- /row -->
 		</div> <!-- /right col for assorted content -->
+	</div> <!-- /row -->
 		</main><!-- #main -->
-		<section id="shop-section">
+		<section id="shop-section" class="container-fluid">
+			<div class="row">
 		<div class="col-xs-12 text-center">
 			<h1 class="shop-title">SHOP</h1>
 		</div> <!-- /shop title -->
@@ -93,9 +96,11 @@ get_header(); ?>
 
 		</div> <!-- /12 xs col wrap 10 md offset 1-->
 		<!-- End of Shop Modules -->
+	</div> <!-- /row -->
 		</section>
 
-		<section id="about-section">
+		<section id="about-section" class="container-fluid">
+			<div class="row">
 		<!-- Full width panel for Who is Adventurous Dad? -->
 		<!-- Style inline so that it will pull image from what is set in customizer -->
 		<div class="col-xs-12 adventurous-about" style="background: url(<?php echo get_template_directory_uri() . '/img/capture45.jpg'; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;">
@@ -117,6 +122,7 @@ get_header(); ?>
 			</div> <!-- /col xs-12 col-md-10 col-md-offset-1 -->
 		</div> <!-- /col xs 12 for about section -->
 		<!-- End of Full width panel for Who is Adventurous Dad? section -->
+		</div> <!-- /row -->
 		</section>
 
 	
