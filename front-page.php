@@ -77,24 +77,33 @@ $pro_query    = new WP_Query(
 if ( $pro_query->have_posts() ) : ?>
 	<section id="shop-section" class="container-fluid">
 		<div class="container-fluid">
-			<div class="row">
-				<div class="col col-xs-12 text-center">
-					<h1 class="shop-title">SHOP</h1>
+			<div class="row title-row">
+				<div class="col col-12 text-center">
+					<h2 class="shop-title">SHOP</h2>
 				</div> <!-- /shop title -->
 			</div>
-			<div class="row justify-content-space-around">
+			<div class="row justify-content-space-around featured-products-area">
 			<?php
 
 			while ( $pro_query->have_posts() ) :
 				$pro_query->the_post();
 				$pro_query_id              = get_the_ID();
 				$featured_product_image_id = get_post_thumbnail_id( $pro_query_id );
-									
+														
 				?>
-					<div class="col col-12 col-md-4 text-center featured-product-wrap">
+					<div class="col col-12 col-md-4 text-center m-auto featured-product-wrap">
+
 						<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="shop-link">
-							<div class="featured-product-image" style="background-image: url('<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'full', false )[0] ); ?>');">
-									<button class="btn wonka-btn"><h6 class="featured-product-title"><?php the_title(); ?></h6></button>
+							<div class="featured-product-image">
+								<img class="img-responsive m-auto" src="<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'full', false )[0] ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_product_image_id, 'medium', true ) ); ?>" />
+							</div>
+							<div class="featured-product-content">
+								<div class="featured-product-excerpt">
+									<p>
+										<?php the_excerpt(); ?>
+									</p>
+								</div>
+								<button class="btn wonka-btn"><h6 class="featured-product-title"><?php the_title(); ?></h6></button>
 							</div>
 						</a>
 					</div>

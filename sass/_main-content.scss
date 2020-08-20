@@ -95,3 +95,23 @@
   max-width:  480px;
   box-shadow: 0 2px 4px 2px $black-opacity5;
 }
+
+#shop-section {
+  padding: 45px 0;
+
+  .featured-products-area {
+
+    .featured-product-wrap {
+      height: 400px;
+      border-radius: 6px;
+      @include box-shadow( 0 1px 3px 0 rgba( 0,0,0, .3 ) );
+
+      a.shop-link {
+        display: inline-block;
+        padding: 8px 20px;
+        background: $button-color;
+        @include box-shadow( 0 1px 3px 0 rgba( 0,0,0, .3 ) );
+      }
+    }
+  }
+}
