@@ -105,9 +105,8 @@
       border-radius: 6px;
       @include box-shadow( 0 1px 3px 0 rgba( 0,0,0, .3 ) );
 
-      a.shop-link {
+      a.image-link {
         display: inline-block;
-        padding: 0;
         margin: auto;
 
         .featured-product-image-wrap {
@@ -120,9 +119,10 @@
           }
         }
 
-        .featured-product-content {
-          padding: 15px 8px;
-        }
+      }
+      
+      .featured-product-content {
+        padding: 15px 8px;
       }
     }
   }
