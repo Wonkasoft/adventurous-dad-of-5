@@ -82,39 +82,41 @@ if ( $pro_query->have_posts() ) : ?>
 				</div> <!-- /shop title -->
 			</div>
 			<div class="row featured-products-row">
-				<div class="container">
-					<div class="row justify-content-space-around featured-products-area">
-			<?php
+				<div class="col col-12">
+					<div class="container">
+						<div class="row justify-content-space-around featured-products-area">
+						<?php
 
-			while ( $pro_query->have_posts() ) :
-				$pro_query->the_post();
-				$pro_query_id              = get_the_ID();
-				$featured_product_image_id = get_post_thumbnail_id( $pro_query_id );
-														
-				?>
-					<div class="col col-12 col-md-4 text-center m-auto">
-						<div class="featured-product-wrap">
-							<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="image-link">
-								<div class="featured-product-image-wrap">
-									<img class="featured-product-image m-auto" src="<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'medium', false )[0] ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_product_image_id, 'medium', true ) ); ?>" />
-								</div>
-							</a>
-								<div class="featured-product-content">
-									<div class="featured-product-excerpt">
-										<p>
-											<?php esc_html( the_excerpt() ); ?>
-										</p>
+						while ( $pro_query->have_posts() ) :
+							$pro_query->the_post();
+							$pro_query_id              = get_the_ID();
+							$featured_product_image_id = get_post_thumbnail_id( $pro_query_id );
+																	
+							?>
+								<div class="col col-12 col-md-4 text-center m-auto">
+									<div class="featured-product-wrap">
+										<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="image-link">
+											<div class="featured-product-image-wrap">
+												<img class="featured-product-image m-auto" src="<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'medium', false )[0] ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_product_image_id, 'medium', true ) ); ?>" />
+											</div>
+										</a>
+										<div class="featured-product-content">
+											<div class="featured-product-excerpt">
+												<p>
+													<?php esc_html( the_excerpt() ); ?>
+												</p>
+											</div>
+											<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="btn btn-wonka btn-shadow">
+												<?php the_title(); ?>
+											</a>
+										</div>
 									</div>
-									<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="btn btn-wonka btn-shadow">
-										<?php the_title(); ?>
-									</a>
 								</div>
+								<?php
+							endwhile;
+							wp_reset_postdata();
+						?>
 						</div>
-					</div>
-					<?php
-				endwhile;
-				wp_reset_postdata();
-			?>
 					</div>
 				</div>
 			</div><!-- /.featured-products-row -->
