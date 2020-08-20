@@ -95,7 +95,7 @@ if ( $pro_query->have_posts() ) : ?>
 
 						<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="shop-link">
 							<div class="featured-product-image">
-								<img class="img-responsive m-auto" src="<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'full', false )[0] ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_product_image_id, 'medium', true ) ); ?>" />
+								<img class="img-responsive m-auto" src="<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'medium', false )[0] ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_product_image_id, 'medium', true ) ); ?>" />
 							</div>
 							<div class="featured-product-content">
 								<div class="featured-product-excerpt">
@@ -103,7 +103,7 @@ if ( $pro_query->have_posts() ) : ?>
 										<?php the_excerpt(); ?>
 									</p>
 								</div>
-								<button class="btn wonka-btn"><h6 class="featured-product-title"><?php the_title(); ?></h6></button>
+								<button class="btn btn-wonka btn-shadow"><?php the_title(); ?></button>
 							</div>
 						</a>
 					</div>

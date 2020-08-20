@@ -445,3 +445,19 @@ td,
 th {
   padding: 0;
 }
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  margin: auto;
+  border-radius: 6px;
+
+  &.btn-wonka {
+    background: $button-color;
+  }
+
+  &.btn-shadow {
+    @include box-shadow( 0 1px 3px 0 rgba( 0,0,0, .3 ) );
+  }
+}

@@ -108,9 +108,8 @@
 
       a.shop-link {
         display: inline-block;
-        padding: 8px 20px;
-        background: $button-color;
-        @include box-shadow( 0 1px 3px 0 rgba( 0,0,0, .3 ) );
+        padding: 0;
+        margin: auto;
       }
     }
   }
