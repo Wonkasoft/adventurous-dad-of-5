@@ -98,15 +98,17 @@ if ( $pro_query->have_posts() ) : ?>
 								<div class="featured-product-image-wrap">
 									<img class="featured-product-image m-auto" src="<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'medium', false )[0] ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_product_image_id, 'medium', true ) ); ?>" />
 								</div>
+							</a>
 								<div class="featured-product-content">
 									<div class="featured-product-excerpt">
 										<p>
 											<?php the_excerpt(); ?>
 										</p>
 									</div>
-									<button class="btn btn-wonka btn-shadow"><?php the_title(); ?></button>
+									<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="shop-link btn btn-wonka btn-shadow">
+										<?php the_title(); ?>
+									</a>
 								</div>
-							</a>
 						</div>
 					</div>
 					<?php
