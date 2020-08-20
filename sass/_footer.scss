@@ -1,9 +1,21 @@
-footer.site-footer {
+footer#colophon.site-footer {
 	position: absolute;
   	bottom: 0;
   	left: 0;
   	right: 0;
   	background: $white;
+
+  	> .row:not(:last-child) {
+  		padding: 25px 0;
+
+  		.col {
+  			margin-bottom: 15px;
+  		}
+
+  		h3 {
+  			text-align: center;
+  		}
+  	}
 }
 
 .info-bar {
@@ -20,8 +32,8 @@ footer.site-footer {
 }
 
 .wordpress-logo {
-		display: inline-block;
-		width: 20px;
-		padding: 10px 0;
-	}
+	display: inline-block;
+	width: 20px;
+	padding: 10px 0;
+}
 

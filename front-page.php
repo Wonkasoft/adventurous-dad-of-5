@@ -88,7 +88,7 @@ if ( $pro_query->have_posts() ) : ?>
 			while ( $pro_query->have_posts() ) :
 				$pro_query->the_post();
 				$pro_query_id              = get_the_ID();
-				$featured_product_image_id = get_featured_product_img_id( $post );
+				$featured_product_image_id = get_post_thumbnail_id( $post_id );
 
 				?>
 					<div class="col col-12 col-md-4 featured-product-wrap">
