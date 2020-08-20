@@ -452,6 +452,7 @@ th {
   padding: 8px 20px;
   margin: auto;
   border-radius: 6px;
+  @include transition( all .25s ease-in-out );
 
   &.btn-wonka {
     background: $button-color;

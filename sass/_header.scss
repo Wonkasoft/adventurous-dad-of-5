@@ -64,6 +64,7 @@ header#masthead {
 #masthead #search-input {
 	flex: .25 1 15%;
 	justify-content: flex-end;
+	height: 42px;
 }
 
 #masthead #search-input:focus {
@@ -72,7 +73,8 @@ header#masthead {
 
 #masthead #search-form button {
 	background: $button-color;
-	background-size: 400% 400%;
+	background-size: 100% 100%;
+	margin-left: -4px;
 }
 
 #masthead #search-form button:hover {
