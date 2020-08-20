@@ -76,13 +76,14 @@ $pro_query    = new WP_Query(
 
 if ( $pro_query->have_posts() ) : ?>
 	<section id="shop-section" class="container-fluid">
-		<div class="container-fluid">
 			<div class="row title-row">
 				<div class="col col-12 text-center">
 					<h2 class="shop-title">SHOP</h2>
 				</div> <!-- /shop title -->
 			</div>
-			<div class="row justify-content-space-around featured-products-area">
+			<div class="row featured-products-row">
+				<div class="container">
+					<div class="row justify-content-space-around featured-products-area">
 			<?php
 
 			while ( $pro_query->have_posts() ) :
@@ -92,7 +93,6 @@ if ( $pro_query->have_posts() ) : ?>
 														
 				?>
 					<div class="col col-12 col-md-4 text-center m-auto featured-product-wrap">
-
 						<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="shop-link">
 							<div class="featured-product-image-wrap">
 								<img class="featured-product-image m-auto" src="<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'medium', false )[0] ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_product_image_id, 'medium', true ) ); ?>" />
@@ -111,8 +111,9 @@ if ( $pro_query->have_posts() ) : ?>
 				endwhile;
 				wp_reset_postdata();
 			?>
-			</div><!-- justify-content-space-around -->
-		</div>
+					</div>
+				</div>
+			</div><!-- /.featured-products-row -->
 	</section>
 <?php endif; ?>
 		<section id="about-section" class="container-fluid">
