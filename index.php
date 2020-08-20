@@ -10,123 +10,52 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Adventurous_Dad_Of_5
+ * @author Wonkasoft,LLC <support@wonkasoft.com>
+ * @version 1.1.0
  */
 
-get_header(); ?>
+get_header();
+?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="container-fluid site-main">
-		<div class="row">
-		<div class="col-xs-12 col-md-6 hidden-sm hidden-xs">
-			<?php 
-				get_template_part( 'template-parts/location', 'map' );
+	<div id="primary" class="content-area row">
+		<main id="main" class="site-main col col-12">
+
+		<?php
+		if ( have_posts() ) :
+
+			if ( is_home() && ! is_front_page() ) :
+				?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+				<?php
+			endif;
+
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
+
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_type() );
+
+			endwhile;
+
+			the_posts_navigation();
+
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+		endif;
 			?>
-		</div> <!-- /left col for map content -->
 
-		<div class="col-xs-12 col-md-6">
-			<div class="row">
-				<div class="assorted-content-title col-xs-12 text-center">
-					<h3 class="panel-title">Gear</h3>
-				</div> <!-- /title for assorted content -->
-				<div class="col-xs-12 text-center">
-				</div> <!-- /col for gear content -->
-			</div> <!-- /row -->
-
-			<div class="row">
-				<div class="assorted-content-title col-xs-12 text-center">
-					<h3 class="panel-title">Location/Images</h3>
-				</div> <!-- /title for assorted content -->
-				<div class="col-xs-12 text-center">
-				</div> <!-- /col for location / images content -->
-			</div> <!-- /row -->
-
-			<div class="row">
-				<div class="assorted-content-title col-xs-12 text-center">
-					<h3 class="panel-title">Blog/Vlog</h3>
-				</div> <!-- /title for assorted content -->
-				<div class="col-xs-12 text-center">
-				</div> <!-- /col for blog/vlog content -->
-			</div> <!-- /row -->
-		</div> <!-- /right col for assorted content -->
-	</div> <!-- /row -->
 		</main><!-- #main -->
-		<section id="shop-section" class="container-fluid">
-			<div class="row">
-		<div class="col-xs-12 text-center">
-			<h1 class="shop-title">SHOP</h1>
-		</div> <!-- /shop title -->
-
-		<!-- Shop Modules -->
-		<div class="col-xs-12 col-md-10 col-md-offset-1 shop-module">
-			<div class="col-xs-12 col-md-4">
-				<div class="featured-module">
-					<a href="<?php echo get_theme_mod('featured_link_1');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_1'); ?>" class="img-responsive" alt="featured image 1"></a>
-				</div>
-			</div> <!-- /module 1 -->
-
-			<div class="col-xs-12 col-md-4">
-				<div class="featured-module">
-				<a href="<?php echo get_theme_mod('featured_link_2');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_2'); ?>" class="img-responsive" alt="featured image 2"></a>
-				</div>
-			</div> <!-- /module 2 -->
-
-			<div class="col-xs-12 col-md-4">
-				<div class="featured-module">
-				<a href="<?php echo get_theme_mod('featured_link_3');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_3'); ?>" class="img-responsive" alt="featured image 3"></a>
-				</div>
-			</div> <!-- /module 3 -->
-
-			<div class="col-xs-12 col-md-4">
-				<div class="featured-module">
-					<a href="<?php echo get_theme_mod('featured_link_4');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_4'); ?>" class="img-responsive" alt="featured image 4"></a>
-				</div>
-			</div> <!-- /module 4 -->
-
-			<div class="col-xs-12 col-md-4">
-				<div class="featured-module">
-					<a href="<?php echo get_theme_mod('featured_link_5');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_5'); ?>" class="img-responsive" alt="featured image 5"></a>
-				</div>
-			</div> <!-- /module 5 -->
-
-			<div class="col-xs-12 col-md-4">
-				<div class="featured-module">
-					<a href="<?php echo get_theme_mod('featured_link_6');?>" target="_blank"><img src="<?php echo get_theme_mod('featured_image_6'); ?>" class="img-responsive" alt="featured image 6"></a>
-				</div>
-			</div> <!-- /module 6 -->
-
-		</div> <!-- /12 xs col wrap 10 md offset 1-->
-		<!-- End of Shop Modules -->
-	</div> <!-- /row -->
-		</section>
-
-		<section id="about-section" class="container-fluid">
-			<div class="row">
-		<!-- Full width panel for Who is Adventurous Dad? -->
-		<!-- Style inline so that it will pull image from what is set in customizer -->
-		<div class="col-xs-12 adventurous-about" style="background: url(<?php echo get_template_directory_uri() . '/img/capture45.jpg'; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;">
-			<div class="col-xs-12 text-center">
-				<h1 class="about-title">Who is Adventurous Dad ?</h1>
-			</div> <!-- /col for about title -->
-			<div class="col-xs-12 col-md-10 col-md-offset-1">
-				
-				<div class="col-xs-12 col-md-4 text-center">
-					<a href="./gallery/" class="about-links">GALLERY</a>
-				</div>
-				
-				<div class="col-xs-12 col-md-4 text-center">
-					<a href="./about-me/" class="about-links">ABOUT ME</a>
-				</div>
-				<div class="col-xs-12 col-md-4 text-center">
-					<a href="./my-sponsors/" class="about-links">MY SPONSORS</a>
-				</div>
-			</div> <!-- /col xs-12 col-md-10 col-md-offset-1 -->
-		</div> <!-- /col xs 12 for about section -->
-		<!-- End of Full width panel for Who is Adventurous Dad? section -->
-		</div> <!-- /row -->
-		</section>
-
-	
-</div><!-- #primary -->
+	</div><!-- #primary -->
 
 <?php
+get_sidebar();
 get_footer();

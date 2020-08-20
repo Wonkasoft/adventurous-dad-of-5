@@ -27,7 +27,7 @@
 header#masthead {
   box-shadow: 0 2px 4px 2px rgba(0,0,0,0.4);
   position: relative;
-  z-index: 100;
+  z-index: 5;
 }
 
 .wp-custom-logo .logo-link .custom-logo {
@@ -47,13 +47,27 @@ header#masthead {
 	text-decoration: none;
 }
 
+.site-branding {
+
+	.site-description {
+		display: none;
+	}
+}
+
+#search-form {
+
+	.input-group {
+		justify-content: flex-end;
+	}
+}
+
 #masthead #search-input {
-	float: right;
-	width: 15%;
+	flex: .25 1 15%;
+	justify-content: flex-end;
 }
 
 #masthead #search-input:focus {
-	width: 30%;
+	flex: .45 1 45%;
 }
 
 #masthead #search-form button {

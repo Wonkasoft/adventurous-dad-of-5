@@ -11,11 +11,9 @@
 
 ?>
 
-</div> <!-- #content -->
-
 <footer id="colophon" class="container-fluid site-footer">
 	<div class="row">
-			<div class="col-xs-12 col-md-3">
+			<div class="col col-12 col-md-3">
 				<h3 class="footer-header">EXPLORE</h3>
 				<nav id="footer-1-navigation" class="footer-1-navigation">
 					<?php
@@ -27,7 +25,7 @@
 				</nav><!-- #site-navigation -->
 			</div> <!-- /column -->
 
-			<div class="col-xs-12 col-md-3">
+			<div class="col col-12 col-md-3">
 				<h3 class="footer-header">ABOUT</h3>
 				<nav id="footer-2-navigation" class="footer-2-navigation">
 					<?php
@@ -39,7 +37,7 @@
 				</nav><!-- #site-navigation -->
 			</div> <!-- /column -->
 
-			<div class="col-xs-12 col-md-3">
+			<div class="col col-12 col-md-3">
 				<h3 class="footer-header">CONTACT</h3>
 				<nav id="footer-3-navigation" class="footer-3-navigation">
 					<?php
@@ -51,7 +49,7 @@
 				</nav><!-- #site-navigation -->
 			</div> <!-- /column -->
 
-			<div class="col-xs-12 col-md-3">
+			<div class="col col-12 col-md-3">
 				<h3 class="footer-header">CONNECT</h3>
 				<span>UPDATES & SPECIALS SIGN UP NOW</span>
 
@@ -73,8 +71,8 @@
 			</div> <!-- /column -->
 	</div> <!-- /row -->
 	<div class="row">
-		<div class="col-xs-12 info-bar">
-			<div class="col-xs-12 text-center">
+		<div class="col col-12 info-bar">
+			<div class="text-center">
 				<div class="site-info">
 					&copy; <?php echo date( 'Y' ); ?> All rights reserved
 					<span class="sep"> | </span>

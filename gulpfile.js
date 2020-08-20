@@ -1,52 +1,43 @@
-var gulp = require('gulp'),
+let gulp = require('gulp'),
 sass = require('gulp-sass'),
 sourcemaps = require('gulp-sourcemaps'),
-jshint = require('gulp-jshint'),
 concat = require('gulp-concat'),
 path = require('path'),
+jshint = require('gulp-jshint'),
+jsmin = require('gulp-js-minify'),
 cleanCSS = require('gulp-clean-css'),
-imagemin = require('gulp-imagemin'),
 plumber = require('gulp-plumber'),
 notify = require('gulp-notify'),
+replace = require('gulp-replace'),
 browserSync = require('browser-sync').create(),
-fs = require('node-fs'),
-fse = require('fs-extra'),
 json = require('json-file'),
-jsmin = require('gulp-js-minify'),
 themeName = json.read('./package.json').get('name'),
 siteName = json.read('./package.json').get('siteName'),
+local = json.read('./package.json').get('localhost'),
 themeDir = '../' + themeName,
 plumberErrorHandler = { errorHandler: notify.onError({
 
 	title: 'Gulp',
 
-	message: 'Error: <%= error.message %>'
+	message: 'Error: <%= error.message %>',
+
+	line: 'Line: <%= line %>'
 
 })
 
 };
-
-gulp.task('default', function(){
-
-	console.log('default gulp task...');
-
-});
-
-gulp.task('default', ['sass', 'js', 'imgPress', 'watch', 'browser-sync']);
-
-gulp.task('init', function() {
-
-	fs.mkdirSync(themeDir, 765, true);
-
-	fse.copySync('theme-boilerplate', themeDir + '/');
-
-});
+sass.compiler = require('node-sass');
 
 // Static server
 gulp.task('browser-sync', function() {
 	browserSync.init({
-		proxy: 'localhost/' + siteName,
-		port: 80
+		proxy: {
+			target: local + siteName,
+			ws: true
+		},
+		watch: true,
+		https: true,
+		port: 4000
 	});
 });
 
@@ -54,7 +45,7 @@ gulp.task('sass', function () {
 
 	return gulp.src('./sass/style.scss')
 
-	.pipe(sourcemaps.init())
+	.pipe(sourcemaps.init( { loadMaps: true } ) )
 
 	.pipe(plumber(plumberErrorHandler))
 
@@ -64,62 +55,145 @@ gulp.task('sass', function () {
 
 	.pipe(concat('style.css'))
 
+	.pipe( replace( /@charset.*?;/, '' ) )
+	
+	.pipe(sourcemaps.write('./maps'))
+
+	.pipe(gulp.dest('./'))
+	
+	.pipe(browserSync.stream())
+	
+	.pipe(notify({
+		message: "✔︎ STYLES-CSS task complete",
+		onLast: true
+	}));
+	
+});
+
+gulp.task('admin-sass', function () {
+
+	return gulp.src('./sass/admin-styles.scss')
+
+	.pipe(sourcemaps.init( { loadMaps: true } ) )
+
+	.pipe(plumber(plumberErrorHandler))
+
+	.pipe(sass())
+
+	.pipe(cleanCSS())
+
+	.pipe(concat('admin-styles.css'))
+
+	.pipe( replace( /@charset.*?;/, '' ) )
+	
+	.pipe(sourcemaps.write('./maps'))
+
+	.pipe(gulp.dest('./assets/css'))
+	
+	.pipe(browserSync.stream())
+	
+	.pipe(notify({
+		message: "✔︎ ADMIN-STYLES-CSS task complete",
+		onLast: true
+	}));
+	
+});
+
+gulp.task('woo-sass', function () {
+
+	return gulp.src('./sass/woocommerce.scss')
+
+	.pipe(sourcemaps.init( { loadMaps: true } ) )
+
+	.pipe(plumber(plumberErrorHandler))
+
+	.pipe(sass())
+
+	.pipe(cleanCSS())
+
+	.pipe(concat('woocommerce.css'))
+
 	.pipe(sourcemaps.write('./maps'))
 
 	.pipe(gulp.dest('./'))
 
-	.pipe(browserSync.stream());
+	.pipe(browserSync.stream())
+
+	.pipe(notify({
+		message: "✔︎ WOOCOMMERCE-CSS task complete",
+		onLast: true
+	}));
 
 });
 
 gulp.task('js', function () {
 
-	return gulp.src('./js/wonkamizer-js.js')
+	return gulp.src( ['./js/navigation.js', './js/skip-link-focus-fix.js', './js/wonkamizer-js.js'] )
+
+	.pipe(sourcemaps.init( { loadMaps: true } ) )
+
+	.pipe(concat(themeName + '.min.js'))
 
 	.pipe(plumber(plumberErrorHandler))
 
 	.pipe(jshint())
 
+	.pipe(jshint.reporter('default'))
+
 	.pipe(jshint.reporter('fail'))
 
 	.pipe(jsmin())
+	
+	.pipe(sourcemaps.write('./maps'))
 
-	.pipe(concat(themeName + '.min.js'))
+	.pipe(gulp.dest('./assets/js'))
 
-	.pipe(gulp.dest('./js'))
+	.pipe(browserSync.stream())
 
-	.pipe(browserSync.stream());
+	.pipe(notify({ 
+		message: "✔︎ JS task complete",
+		onLast: true
+	}));
 
 });
 
-gulp.task('imgPress', function() {
+gulp.task('admin-js', function () {
 
-	return gulp.src('./images/*.{png,jpg,jpeg,gif}')
+	return gulp.src( [ './js/customizer.js', './inc/js/admin-edit.js' ] )
+	
+	.pipe(sourcemaps.init( { loadMaps: true } ) )
+
+	.pipe(concat( 'admin-' + themeName + '.min.js' ))
 
 	.pipe(plumber(plumberErrorHandler))
 
-	.pipe(imagemin({
+	.pipe(jshint())
 
-		optimizationLevel: 7,
+	.pipe(jshint.reporter('default'))
 
-		progressive: true
+	.pipe(jshint.reporter('fail'))
 
-	}))
+	.pipe(jsmin())
+	
+	.pipe(sourcemaps.write('./maps'))
 
-	.pipe(gulp.dest('./img'))
+	.pipe(gulp.dest('./assets/js'))
 
-	.pipe(browserSync.stream());
+	.pipe(browserSync.stream())
+
+	.pipe(notify({ 
+		message: "✔︎ ADMIN-JS task complete",
+		onLast: true
+	}));
 
 });
 
 gulp.task('watch', function() {
 
-	gulp.watch('./*.php').on('change', browserSync.reload);
-
-	gulp.watch('./sass/*.scss', ['sass']).on('change', browserSync.reload);
-
-	gulp.watch('./js/*.js', ['js']).on('change', browserSync.reload);
-
-	gulp.watch('./images/*.{png,jpg,jpeg,gif}', ['imgPress']).on('change', browserSync.reload);
+	gulp.watch('**/sass/**/*.scss', gulp.series( gulp.parallel( 'sass', 'woo-sass', 'admin-sass' ) ) ).on( 'change', browserSync.reload );
+	gulp.watch('**/*.php').on('change', browserSync.reload);
+	gulp.watch(['./js/*.js', './inc/js/*.js'], gulp.series( gulp.parallel( 'js', 'admin-js' ) ) ).on( 'change', browserSync.reload );
 
 });
+
+gulp.task( 'default', gulp.series( gulp.parallel( 'sass', 'woo-sass', 'admin-sass', 'js', 'admin-js', 'watch', 'browser-sync' ) ) );

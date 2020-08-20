@@ -16,6 +16,7 @@ if ( ! function_exists( 'adventurous_dad_of_5_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function adventurous_dad_of_5_setup() {
+	define( 'THEME_VERSION', '1.1.0' );
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -133,23 +134,25 @@ add_action( 'widgets_init', 'adventurous_dad_of_5_widgets_init' );
 function adventurous_dad_of_5_scripts() {
 
 	// Check to see if bootstrap style is already enqueue before setting the enqueue
-	$style = 'bootstrap';
-	if ( ! wp_style_is( $style, 'enqueued' ) && ! wp_style_is( $style, 'done' ) ) {
+	$bootstrap = 'bootstrap';
+	if ( ! wp_style_is( $bootstrap, 'enqueued' ) && ! wp_style_is( $bootstrap, 'done' ) ) {
     //queue up your bootstrap
-		wp_enqueue_style( $style, get_template_directory_uri() . '/css/bootstrap.min.css', '3.3.7', 'all' );
+		wp_enqueue_style( $bootstrap, 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css', '4.5.2', 'all' );
+		wp_script_add_data( $bootstrap, array( 'integrity', 'crossorigin' ), array( 'sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z', 'anonymous' ) );
 	}
 	
 	wp_enqueue_style( 'adventurous-dad-of-5-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'adventurous-dad-of-5-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'adventurous-dad-of-5-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'adventurous-dad-of-5-js', get_template_directory_uri() . '/assets/js/adventurous-dad-of-5.min.js', array(), THEME_VERSION, true );
 
 	// Check to see if bootstrap js is already enqueue before setting the enqueue
 	$bootstrapjs = 'bootstrap-js';
 	if ( ! wp_script_is( $bootstrapjs, 'enqueued')  &&  ! wp_script_is($bootstrapjs, 'done') ) {
 	 	// enqueue bootstrap js
-		wp_enqueue_script( $bootstrapjs, get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.3.7', true );
+		wp_enqueue_script( 'popperjs', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', array( 'jquery' ), '4.5.2', true );
+		wp_script_add_data( 'popperjs', array( 'integrity', 'crossorigin' ), array( 'sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN', 'anonymous' ) );
+		wp_enqueue_script( $bootstrapjs, 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array( 'jquery', 'popperjs' ), '4.5.2', true );
+		wp_script_add_data( $bootstrapjs, array( 'integrity', 'crossorigin' ), array( 'sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV', 'anonymous' ) );
 	} 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -178,11 +181,6 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Includes Walker Class file.
