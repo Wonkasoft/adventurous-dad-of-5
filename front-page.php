@@ -88,8 +88,8 @@ if ( $pro_query->have_posts() ) : ?>
 			while ( $pro_query->have_posts() ) :
 				$pro_query->the_post();
 				$pro_query_id              = get_the_ID();
-				$featured_product_image_id = get_post_thumbnail_id( $post_id );
-
+				$featured_product_image_id = get_post_thumbnail_id( $pro_query_id );
+									
 				?>
 					<div class="col col-12 col-md-4 text-center featured-product-wrap">
 						<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="shop-link">
