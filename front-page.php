@@ -91,7 +91,7 @@ if ( $pro_query->have_posts() ) : ?>
 				$featured_product_image_id = get_post_thumbnail_id( $post_id );
 
 				?>
-					<div class="col col-12 col-md-4 featured-product-wrap">
+					<div class="col col-12 col-md-4 text-center featured-product-wrap">
 						<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="shop-link">
 							<div class="featured-product-image" style="background-image: url('<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'full', false )[0] ); ?>');">
 									<button class="btn wonka-btn"><h6 class="featured-product-title"><?php the_title(); ?></h6></button>
