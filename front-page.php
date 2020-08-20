@@ -92,20 +92,22 @@ if ( $pro_query->have_posts() ) : ?>
 				$featured_product_image_id = get_post_thumbnail_id( $pro_query_id );
 														
 				?>
-					<div class="col col-12 col-md-4 text-center m-auto featured-product-wrap">
-						<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="shop-link">
-							<div class="featured-product-image-wrap">
-								<img class="featured-product-image m-auto" src="<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'medium', false )[0] ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_product_image_id, 'medium', true ) ); ?>" />
-							</div>
-							<div class="featured-product-content">
-								<div class="featured-product-excerpt">
-									<p>
-										<?php the_excerpt(); ?>
-									</p>
+					<div class="col col-12 col-md-4 text-center m-auto">
+						<div class="featured-product-wrap">
+							<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="shop-link">
+								<div class="featured-product-image-wrap">
+									<img class="featured-product-image m-auto" src="<?php echo esc_url( wp_get_attachment_image_src( $featured_product_image_id, 'medium', false )[0] ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_product_image_id, 'medium', true ) ); ?>" />
 								</div>
-								<button class="btn btn-wonka btn-shadow"><?php the_title(); ?></button>
-							</div>
-						</a>
+								<div class="featured-product-content">
+									<div class="featured-product-excerpt">
+										<p>
+											<?php the_excerpt(); ?>
+										</p>
+									</div>
+									<button class="btn btn-wonka btn-shadow"><?php the_title(); ?></button>
+								</div>
+							</a>
+						</div>
 					</div>
 					<?php
 				endwhile;
