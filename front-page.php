@@ -102,7 +102,7 @@ if ( $pro_query->have_posts() ) : ?>
 								<div class="featured-product-content">
 									<div class="featured-product-excerpt">
 										<p>
-											<?php the_excerpt(); ?>
+											<?php esc_html( the_excerpt() ); ?>
 										</p>
 									</div>
 									<a href="<?php esc_url( the_permalink( $pro_query_id ) ); ?>" class="shop-link btn btn-wonka btn-shadow">
